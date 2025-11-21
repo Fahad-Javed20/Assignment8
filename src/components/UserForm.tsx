@@ -19,7 +19,6 @@ const UserForm = ({ onAddUser }: UserFormProps) => {
     <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-4 rounded-xl shadow space-y-4">
       <h2 className="text-2xl font-bold bg-black text-white rounded-lg">Add User</h2>
 
-      {/* Name */}
       <input
         className="w-full border p-2 rounded"
         placeholder="Enter Your UserName"
@@ -29,7 +28,6 @@ const UserForm = ({ onAddUser }: UserFormProps) => {
         <p className="text-red-500 text-sm">{errors.username.message}</p>
       )}
 
-      {/* Email */}
       <input
         className="w-full border p-2 rounded"
         placeholder="Enter your Email"
@@ -45,7 +43,6 @@ const UserForm = ({ onAddUser }: UserFormProps) => {
         <p className="text-red-500 text-sm">{errors.email.message}</p>
       )}
 
-      {/* Mobile No */}
       <input
         className="w-full border p-2 rounded"
         placeholder="Enter Your Mobile Number"
