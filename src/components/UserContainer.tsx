@@ -11,21 +11,14 @@ const UserContainer = () => {
       const response = await fetch("https://dummyjson.com/users");
       const data = await response.json();
 
-      const convertedUsers: UserType[] = data.users.map((u:UserType) => ({
-        id: u.id,
-        name: ` ${u.name}`,
-        email: u.email,
-        phone: u.mobileNo,
-      }));
-
-      setUsers(convertedUsers.reverse()); // newest at top
+      setUsers(data.users.reverse());
     };
 
     loadUsers();
   }, []);
 
   const handleAddUser = (newUser: UserType) => {
-    setUsers([newUser, ...users]); // add at top
+    setUsers([newUser, ...users]);
   };
 
   return (
