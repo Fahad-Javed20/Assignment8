@@ -6,12 +6,11 @@ interface UserListProps {
 
 const UserList = ({ users }: UserListProps) => {
   return (
-    <div className="bg-white p-4 rounded-xl shadow">
+    <div className="bg-white p-4 rounded-xl shadow ">
       <h2 className="text-2xl font-bold mb-4 bg-black text-white rounded-lg ">Users List</h2>
 
       {users.map(user => (
-        <div key={user.id}className="p-3 border-b last:border-none flex justify-between"
-        >
+        <div key={user.id}className="p-3 border-b last:border-none flex justify-between">
           <div>
             <p className="font-semibold">{user.username}</p>
             <p className="text-sm text-gray-500">{user.email}</p>
