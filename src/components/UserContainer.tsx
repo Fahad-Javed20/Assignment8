@@ -7,14 +7,13 @@ const UserContainer = () => {
   const [users, setUsers] = useState<UserType[]>([]);
 
   useEffect(() => {
-    const loadUsers = async () => {
+    const fetchUsers = async () => {
       const response = await fetch("https://dummyjson.com/users");
       const data = await response.json();
-
       setUsers(data.users.reverse());
     };
 
-    loadUsers();
+    fetchUsers();
   }, []);
 
   const handleAddUser = (newUser: UserType) => {

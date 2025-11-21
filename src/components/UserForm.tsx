@@ -17,22 +17,22 @@ const UserForm = ({ onAddUser }: UserFormProps) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-4 rounded-xl shadow space-y-4">
-      <h2 className="text-xl font-bold">Add User</h2>
+      <h2 className="text-2xl font-bold bg-black text-white rounded-lg">Add User</h2>
 
       {/* Name */}
       <input
         className="w-full border p-2 rounded"
-        placeholder="Name"
-        {...register("name", { required: "Name is required" })}
-      />
-      {errors.name && (
-        <p className="text-red-500 text-sm">{errors.name.message}</p>
+        placeholder="Enter Your UserName"
+        {...register("username", { required: "Name is required" })}/>
+
+      {errors.username && (
+        <p className="text-red-500 text-sm">{errors.username.message}</p>
       )}
 
       {/* Email */}
       <input
         className="w-full border p-2 rounded"
-        placeholder="Email"
+        placeholder="Enter your Email"
         {...register("email", {
           required: "Email is required",
           pattern: {
@@ -48,7 +48,7 @@ const UserForm = ({ onAddUser }: UserFormProps) => {
       {/* Mobile No */}
       <input
         className="w-full border p-2 rounded"
-        placeholder="Phone"
+        placeholder="Enter Your Mobile Number"
         {...register("mobileNo", {
           required: "Phone is required",
           minLength: { value: 10, message: "Phone too short" }
